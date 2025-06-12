@@ -109,15 +109,35 @@ venv.bak/
 
 # Node.js dependencies
 frontend/node_modules/
+frontend/build/
+frontend/.npm/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Log files
 *.log
+training_output.log
 
 # Model artifacts
 models/
+app/models/trained/
+catboost_info/
 catboost_info/learn/
 catboost_info/tmp/
 
-# Data artifacts (if not versioned)
-app/data/*.csv
-app/data/*.json
+# Data artifacts (unless explicitly committed)
+app/data/training/
+app/data/*.pkl
+app/data/*.npy
+app/data/*.h5
+
+# Keep specific CSV files that are needed for the application
+!app/data/master_team_list.csv
+!app/data/cleaned_merged_seasons.csv
+!app/data/cleaned_merged_seasons_team_aggregated.csv
